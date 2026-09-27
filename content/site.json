@@ -1,0 +1,14 @@
+{
+  "name": "암호 및 보안 프로토콜 연구실",
+  "nameEn": "Cryptography & Security Protocols Lab",
+  "shortName": "CSP Lab",
+  "affiliation": "전남대학교 · 인공지능학부",
+  "headline": "신뢰할 수 있는 세상을 위한\n암호와 보안 프로토콜",
+  "description": "공개키암호와 보안 프로토콜을 연구합니다. 암호학의 이론을 분석하고 구현하며, 데이터와 프라이버시를 보호하는 기술로 연결합니다.",
+  "email": "donghyun.yu@jnu.ac.kr",
+  "phone": "062-530-4220",
+  "address": "전남대학교 인공지능학부",
+  "recruiting": true,
+  "recruitingText": "암호학과 정보보호에 관심 있는 학부연구생을 모집합니다. 자기소개, 지원동기, 관심 분야와 면담 가능한 요일을 이메일로 보내주세요.",
+  "recruitingUrl": "https://aisw.jnu.ac.kr/aisw/518/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGYWlzdyUyRjY0JTJGMTA1NDI3OCUyRmFydGNsVmlldy5kbyUzRg%3D%3D"
+}
