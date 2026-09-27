@@ -1,14 +1,9 @@
 {
   "name": "유동현",
   "nameEn": "Donghyun Yu",
-  "title": "교수 · Principal Investigator",
+  "title": "조교수",
   "affiliation": "전남대학교 인공지능학부",
   "email": "donghyun.yu@jnu.ac.kr",
   "phone": "062-530-4220",
-  "bio": "암호 및 보안 프로토콜 연구실을 이끌고 있습니다. 정보보안, 네트워크 보안, 암호학을 연구하며, 공개키암호와 보안 프로토콜의 이론 및 응용을 다룹니다.",
-  "photo": "",
-  "scholarUrl": "",
-  "cvUrl": "",
-  "education": [],
-  "experience": []
+  "bio": "암호 및 보안 프로토콜 연구실을 이끌고 있습니다. 정보보안, 네트워크 보안, 암호학을 연구하며, 공개키암호와 보안 프로토콜의 이론 및 응용을 다룹니다."
 }
