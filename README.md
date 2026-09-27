@@ -13,14 +13,23 @@
 
 논문·구성원·졸업생의 실제 자료는 아직 제공되지 않아 빈 목록으로 두었습니다. 교수 사진·학력·경력도 확인되지 않은 내용을 넣지 않았습니다. 영문 연구실 이름은 국문 명칭을 옮긴 초안이며, 정식 표기를 확인한 뒤 관리 화면에서 수정할 수 있습니다.
 
-## 처음 공개하기
+## 공개 상태
+
+2026-09-27에 저장소를 공개로 전환하고 GitHub Pages 배포를 완료했습니다.
+
+- [홈페이지](https://jnu-csplab.github.io/labwebsite/)
+- [관리 안내](https://jnu-csplab.github.io/labwebsite/admin/)
+
+CMS 최초 계정 연결 및 CMS에서 저장한 내용의 자동 반영 확인은 별도로 진행합니다.
+
+## 배포 설정 참고
 
 1. 완성된 변경을 `main`에 반영합니다.
 2. 저장소 **Settings → Pages → Source → GitHub Actions**를 선택합니다.
 3. **Actions → Build and publish website → Run workflow**를 실행합니다.
-4. 성공하면 Pages 설정 또는 작업 결과에 나온 주소로 접속합니다. 기본 예상 주소는 `https://jnu-csplab.github.io/labwebsite/`입니다.
+4. 성공하면 Pages 설정 또는 작업 결과에 나온 주소로 접속합니다. 현재 주소는 `https://jnu-csplab.github.io/labwebsite/`입니다.
 
-현재 저장소는 비공개입니다. GitHub Free는 공개 저장소의 Pages를 지원하며, 비공개 저장소는 해당 기능을 제공하는 유료 요금제가 필요합니다. 저장소를 공개로 바꾸는 결정은 소유자가 해야 합니다. 비공개 저장소로 배포하더라도 일반적인 GitHub Pages 웹사이트는 공개됩니다. 실제 배포 성공 전까지 위 주소가 작동한다고 가정하지 마세요.
+현재 저장소와 홈페이지는 공개되어 있습니다. GitHub Free의 공개 저장소 Pages를 사용합니다. 홈페이지에 올릴 공개 자료만 저장소에 보관하세요.
 
 ## 코딩 없이 수정하기
 
@@ -31,7 +40,7 @@
 - **졸업 처리:** 재실 및 졸업 구분을 ‘졸업생’으로 변경 → 졸업 연도·진로 입력 → 저장
 - **연구실 기본 정보 / 교수 소개 / 연구 분야:** 텍스트와 사진 변경 → 저장
 
-자세한 절차는 [편집 안내](docs/EDITOR_GUIDE.ko.md)를 참고하세요. `/admin/`은 직접 만든 로그인 서버가 아니라 안전한 외부 편집 도구로 연결하는 안내 화면입니다. 관리 권한은 GitHub와 Pages CMS가 처리합니다. CMS 최초 연결·실제 저장·공개 배포는 계정 소유자의 초기 설정 후 확인해야 합니다.
+자세한 절차는 [편집 안내](docs/EDITOR_GUIDE.ko.md)를 참고하세요. `/admin/`은 외부 편집 도구로 연결하는 안내 화면입니다. 관리 권한은 GitHub와 Pages CMS가 처리합니다. 최초 CMS 연결은 계정 소유자의 로그인과 앱 접근 승인으로 완료합니다.
 
 ## 개발 및 확인
 
@@ -55,3 +64,4 @@ GitHub Actions는 변경 제안에서 검증·빌드만 수행하며, `main`에�
 - [Pages CMS 시작하기](https://pagescms.org/docs/quick-start/)
 
 구성 참고: [서울대 AISys Lab](https://aisys.snu.ac.kr/), [KAIST HCI Lab](https://hcil.kaist.ac.kr/), [한양대 암생물학연구실](https://www.cancerbio.hanyang.ac.kr/). 디자인과 문구는 이 연구실용으로 작성했으며 다른 사이트의 템플릿이나 사진을 복사하지 않았습니다.
+
