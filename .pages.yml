@@ -1,0 +1,284 @@
+# Pages CMS configuration: https://pagescms.org/docs/configuration/
+media:
+  - name: images
+    label: 사진 및 연구 이미지
+    input: media
+    output: /media
+    extensions: [png, jpg, jpeg, webp]
+    rename: safe
+  - name: documents
+    label: PDF 문서
+    input: media
+    output: /media
+    extensions: [pdf]
+    rename: safe
+
+content:
+  - name: site
+    label: 연구실 기본 정보
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: name
+        label: 연구실 이름
+        type: string
+        required: true
+      - name: nameEn
+        label: 연구실 영문 이름
+        type: string
+      - name: shortName
+        label: 연구실 약칭
+        type: string
+      - name: affiliation
+        label: 소속 학교 및 학과
+        type: string
+      - name: headline
+        label: 메인 화면 제목
+        type: text
+        required: true
+      - name: description
+        label: 연구실 소개
+        type: text
+        description: 방문자에게 보여줄 소개를 일반 문장으로 작성합니다.
+      - name: email
+        label: 대표 이메일
+        type: string
+      - name: phone
+        label: 대표 전화번호
+        type: string
+      - name: address
+        label: 연구실 주소
+        type: text
+      - name: recruiting
+        label: 학생 모집 안내 표시
+        type: boolean
+      - name: recruitingText
+        label: 학생 모집 안내 문구
+        type: text
+      - name: recruitingUrl
+        label: 모집 안내 또는 지원 링크
+        type: string
+        description: https://로 시작하는 웹 주소를 입력합니다. 문의 이메일은 대표 이메일 항목을 사용합니다.
+
+  - name: professor
+    label: 교수 소개
+    type: file
+    path: content/professor.json
+    format: json
+    fields:
+      - name: name
+        label: 교수님 성함
+        type: string
+        required: true
+      - name: nameEn
+        label: 영문 성함
+        type: string
+      - name: title
+        label: 직위
+        type: string
+      - name: affiliation
+        label: 소속
+        type: string
+      - name: email
+        label: 이메일
+        type: string
+      - name: phone
+        label: 전화번호
+        type: string
+      - name: bio
+        label: 소개 글
+        type: text
+      - name: photo
+        label: 프로필 사진
+        type: image
+        options:
+          media: images
+      - name: scholarUrl
+        label: Google Scholar 주소
+        type: string
+        description: https://로 시작하는 전체 주소를 입력합니다.
+      - name: cvUrl
+        label: 이력서 PDF
+        type: file
+        options:
+          media: documents
+          extensions: [pdf]
+      - name: education
+        label: 학력
+        type: string
+        list: true
+        description: 학력 한 줄마다 항목을 추가합니다.
+      - name: experience
+        label: 경력
+        type: string
+        list: true
+        description: 경력 한 줄마다 항목을 추가합니다.
+
+  - name: research
+    label: 연구 분야
+    type: file
+    path: content/research.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: 연구 분야 이름
+        type: string
+        required: true
+      - name: titleEn
+        label: 영문 이름
+        type: string
+      - name: summary
+        label: 짧은 소개
+        type: text
+        required: true
+      - name: details
+        label: 상세 설명
+        type: text
+      - name: image
+        label: 연구 이미지
+        type: image
+        options:
+          media: images
+      - name: order
+        label: 표시 순서
+        type: number
+        description: 작은 숫자의 연구 분야가 먼저 표시됩니다.
+        options:
+          min: 0
+
+  - name: publications
+    label: 연구 논문
+    type: file
+    path: content/publications.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: 논문 제목
+        type: string
+        required: true
+      - name: authors
+        label: 저자
+        type: text
+        required: true
+        description: 논문에 기재된 저자 순서대로 입력합니다.
+      - name: year
+        label: 발행 연도
+        type: number
+        required: true
+        options:
+          min: 1900
+          max: 2200
+      - name: venue
+        label: 학술지 또는 학회
+        type: string
+        required: true
+      - name: type
+        label: 논문 구분
+        type: select
+        required: true
+        options:
+          values:
+            - name: Journal
+              label: 학술지
+            - name: Conference
+              label: 학회
+            - name: Preprint
+              label: 프리프린트
+      - name: doi
+        label: DOI
+        type: string
+        description: DOI 식별자 또는 https://doi.org/로 시작하는 주소를 입력합니다.
+      - name: url
+        label: 논문 웹 주소
+        type: string
+        description: 출판사나 논문 공개 페이지의 전체 주소를 입력합니다.
+      - name: pdf
+        label: 논문 PDF
+        type: file
+        options:
+          media: documents
+          extensions: [pdf]
+      - name: code
+        label: 코드 저장소 주소
+        type: string
+      - name: featured
+        label: 대표 논문으로 표시
+        type: boolean
+
+  - name: people
+    label: 구성원·졸업생
+    type: file
+    path: content/people.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: 이름
+        type: string
+        required: true
+      - name: nameEn
+        label: 영문 이름
+        type: string
+      - name: role
+        label: 과정 및 직위
+        type: select
+        required: true
+        options:
+          values:
+            - name: PhD
+              label: 박사과정
+            - name: MS
+              label: 석사과정
+            - name: Integrated
+              label: 석박사통합과정
+            - name: Undergraduate
+              label: 학부연구생
+            - name: Researcher
+              label: 연구원
+      - name: status
+        label: 재실 및 졸업 구분
+        type: select
+        required: true
+        description: 졸업생으로 바꾸면 Alumni 영역에 표시됩니다.
+        options:
+          values:
+            - name: current
+              label: 재실 구성원
+            - name: alumni
+              label: 졸업생
+      - name: interests
+        label: 관심 연구 분야
+        type: text
+      - name: email
+        label: 이메일
+        type: string
+      - name: photo
+        label: 프로필 사진
+        type: image
+        options:
+          media: images
+      - name: website
+        label: 개인 홈페이지 주소
+        type: string
+      - name: startYear
+        label: 합류 연도
+        type: number
+        options:
+          min: 1900
+          max: 2200
+      - name: endYear
+        label: 졸업 또는 종료 연도
+        type: number
+        options:
+          min: 1900
+          max: 2200
+      - name: currentPosition
+        label: 졸업 후 소속 및 진로
+        type: string
+
+settings:
+  content:
+    merge: true
